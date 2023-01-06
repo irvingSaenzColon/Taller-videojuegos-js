@@ -1,0 +1,94 @@
+/* Colors and sizes */
+:root{
+
+    --purple: #aa07f5;
+    --dark-purple: #8e14c7;
+    --green-yellow-crayola: #FFEF9F;
+    --mimi-pink: #FFD6E0;
+    --electric-blue: #90F1EF;
+    --electirc-dark-blue: #54c0d1;
+
+    --button-size: 45px;
+}
+
+/* General styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Fredoka One', cursive;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--purple);
+}
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 0;
+    height: 100vh;
+    background-color: var(--dark-purple);
+}
+aside{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    background-color: var(--dark-purple);
+    border-radius: 4px;
+}
+canvas{
+    margin: 0 0 24px;
+    border-radius: 4px;
+    border: 5px solid #db7a5a;
+    background-color: var(--green-yellow-crayola);
+}
+
+/* Components */
+
+.buttons-conatiner{
+    display: grid;
+    grid-template-columns: repeat(3, var(--button-size));
+    grid-template-rows: repeat(2, var(--button-size));
+    gap: 5px;
+}
+
+.game__move-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: var(--button-size);
+    height: var(--button-size);
+    padding: 4px;
+    border-radius: 4px;
+    border: 2px solid var(--electirc-dark-blue);
+
+    background-color: var(--electric-blue);
+    transition: background-color 0.25s ease;
+}
+.game__move-btn:hover{
+    background-color: var(--electirc-dark-blue);
+}
+.game__move-btn>svg{
+    width: 100%;
+    height: 100%;
+}
+.game__move-btn>svg>path{
+    stroke: #424242;
+    transition: background-color 0.25s ease;
+}
+.game__move-btn:hover>svg>path{
+    stroke: #EFEFEF;
+}
+.game__move-btn:nth-child(1){
+    grid-column: 2 /span 3;
+}
